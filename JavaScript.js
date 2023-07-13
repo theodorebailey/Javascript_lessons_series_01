@@ -302,24 +302,28 @@ console.log(speedCheck(90))
 console.log(speedCheck(141))
 
 
-
+// show odd and even numbers 
+// start at 1, <= , for loop will allow for a return statement to be used which stops undefined being added to the console
 function showNumbers (input) {
     
+    // issues 
     return (input % 2 == 0) ? "even" : "odd"
     
 }
 
 for (i = 1; i <= 50; i++) {
-    showNumbers(i)
+    console.log(showNumbers(i))
 }
 
+
+// allows for user input
+// issues with return statement
+// required to store information, log to console results joined and seperated by line break
 function limit (input) {
     
     let arr = [];
     
-    for (let i = 1; i <= input; ++i) {
-        
-        
+    for (let i = 1; i <= input; ++i) {        
          (i % 2 == 0) ? console.log(i, "even") : console.log(i,"odd");
     }
     
@@ -331,3 +335,45 @@ let userInput = prompt("Please provide a numerical input: ");
 let results = limit(userInput);
 console.log(results.join("\n"));
 
+// removing unecessary features
+function limit (input) {
+ 
+    for (let i = 1; i <= input; i++) {        
+         (i % 2 == 0) ? console.log(i, "even") : console.log(i,"odd");
+    }
+}
+
+let userInput = prompt("Please provide a numerical input: ");
+limit(userInput);
+
+
+// removing undefined
+// very verbose
+function showNumbers (input) {
+    
+    for (i=1;i<=input;i++) {
+
+        (i % 2 == 0) ? console.log(i,"even") : console.log(i,"odd")
+        
+    }
+    
+    return "";
+}
+
+let userInput = prompt("Please provide a number: ")
+
+let result = showNumbers(userInput);
+if (result !== "") {
+console.log(result)
+}
+
+function showNumbers (input) {
+    
+    for (i=1;i<=input;i++) (i%2==0) ? console.log("even") : console.log("odd")
+    
+    return "end"
+    
+}
+
+// not logging to console return value of function
+showNumbers(10)
