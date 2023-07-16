@@ -377,3 +377,59 @@ function showNumbers (input) {
 
 // not logging to console return value of function
 showNumbers(10)
+
+
+// Cleanest code
+function limit (input) {
+ 
+    for (i=1;i<=input;i++) {        
+         const message = (i % 2 == 0) ? (i, "even") : (i,"odd");
+         console.log(message)
+    }
+}
+
+let userInput = prompt("Please provide a numerical input: ");
+limit(userInput);
+
+// Secure
+
+function limit(input) {
+if (typeof input === "number") {
+    let message;
+
+    if (input < 0) {
+        for (let i = -1; i >= input; i--) {
+            message = (i % 2 === 0) ? i + " even" : i + " odd";
+            console.log(message);
+        }
+    } else {
+        for (let i = 1; i <= input; i++) {
+            message = (i % 2 === 0) ? i + " even" : i + " odd";
+            console.log(message);
+        }
+    }
+    } else {
+        console.log("Invalid input: ");
+    }
+}
+
+let userInput = prompt("Please provide a numerical input:");
+let parsedInput = parseInt(userInput, 10); // Convert user input to a number
+
+limit(parsedInput);
+
+  
+// Count true values
+let array = [0, 2, 3, "", "hello", undefined, null]
+function countTruthy (arr) {
+    
+    let truthCount = 0;
+    
+    for (i=0;i<arr.length-1;i++) {
+        if (arr[i]) truthCount++;
+    }
+    
+    return truthCount;
+}
+
+console.log(countTruthy(array))
