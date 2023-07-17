@@ -511,6 +511,26 @@ function objectProperties (obj) {
 
 objectProperties(obj)
 
+// checking access to keys
+
+
+let obj = {
+    hi: "hi",
+    yes: "yes",
+    fine: 1,
+    ok: 2,
+    hello: "hello"
+}
+
+function objectProperties (obj) {
+    for (let key in obj) {
+        console.log(key)
+    }
+
+}
+
+objectProperties(obj)
+
 // better naming convention
 
 
@@ -530,3 +550,36 @@ function objectProperties (obj) {
 }
 
 objectProperties(obj)
+
+// Sum of multiples
+
+function sum (limit) {
+    
+    let arr3 =[];
+    let arr5 = [];
+    
+    let start3 = 0;
+    let start5 = 0;
+    
+    if (typeof limit === "number") {
+        
+        for (i=0;i<=limit;i++) {
+            if (start3+2 < limit) {
+                start3 += 3
+                arr3.push(start3);
+            }
+            if (start5+4 < limit) {
+                start5 += 5
+                arr5.push(start5)
+            }
+        }
+    }
+    console.log(arr3, arr5)
+}
+
+sum(50)
+sum(51)
+sum(52)
+sum(53)
+sum(54)
+sum(55)
