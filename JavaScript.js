@@ -583,3 +583,78 @@ sum(52)
 sum(53)
 sum(54)
 sum(55)
+
+// vast improvement 
+
+function sum (limit) {
+    
+    let arr3 =[];
+    let arr5 = [];
+    
+    if (typeof limit === "number") {
+        
+        for (i=0;i<=limit;i++) {
+            if (i % 3 == 0) {
+                arr3.push(i);
+                
+            }
+            if (i % 5 == 0) {
+                arr5.push(i)
+            }
+        }
+    }
+    console.log(arr3, arr5)
+}
+
+sum(50)
+sum(51)
+sum(52)
+sum(53)
+sum(54)
+sum(55)
+
+// simplest 
+
+function sum (limit) {
+    
+    let count = 0;
+    
+    if (typeof limit === "number") {
+        
+        for (i=0;i<=limit;i++) {
+            if (i % 3 == 0) {
+                count = count + i;
+            }
+            if (i % 5 == 0) {
+                count = count + i;
+            }
+        }
+    }
+    console.log(count)
+}
+
+sum(10)
+sum(51)
+sum(52)
+sum(53)
+sum(54)
+sum(55)
+
+//  all multiples, no additional on cross over numerals
+
+function sum (limit) {
+    
+    let count = 0;
+    
+    if (typeof limit === "number") {
+        
+        for (i=0;i<=limit;i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                count = count + i;
+            }
+        }
+    }
+    console.log(count)
+}
+
+sum(10)
