@@ -393,34 +393,37 @@ limit(userInput);
 
 // Secure
 
-function limit(input) {
-if (typeof input === "number") {
-    let message;
-
-    if (input < 0) {
-        for (let i = -1; i >= input; i--) {
-            message = (i % 2 === 0) ? i + " even" : i + " odd";
-            console.log(message);
+function limit (input) {
+    
+    if (typeof input === "number") {
+        
+        if (input < 0) {
+            for (let i=-1;i>=input;i--) {        
+                message = (i % 2 == 0) ? (`${i}: even`) : (`${i}: odd`);
+                console.log(message)
+            }
+            
+        } else {
+            for (let i=1;i<=input;i++) {        
+                message = (i % 2 == 0) ? (`${i}: even`) : (`${i}: odd`);
+                console.log(message)
+            }
+            
         }
-    } else {
-        for (let i = 1; i <= input; i++) {
-            message = (i % 2 === 0) ? i + " even" : i + " odd";
-            console.log(message);
-        }
-    }
-    } else {
-        console.log("Invalid input: ");
+        
     }
 }
 
-let userInput = prompt("Please provide a numerical input:");
-let parsedInput = parseInt(userInput, 10); // Convert user input to a number
+let userInput = prompt("Please provide a numerical input: ");
+let parsedInput = parseInt(userInput); // Convert user input to a number
 
 limit(parsedInput);
 
-  
+
 // Count true values
-let array = [0, 2, 3, "", "hello", undefined, null]
+
+let array = [0, 2, 3, "", "hello", undefined, null];
+
 function countTruthy (arr) {
     
     let truthCount = 0;
@@ -433,3 +436,97 @@ function countTruthy (arr) {
 }
 
 console.log(countTruthy(array))
+
+// False count
+
+
+let array = [0, 2, 3, "", "hello", undefined, null];
+function countTruthy (arr) {
+    
+    let truthCount = 0;
+    let falseCount = 0;
+    
+    for (let value of arr) {
+        if (value) {
+            truthCount++
+        } else {
+            falseCount++;
+        }
+    } 
+    
+    console.log(`Truth: ${truthCount}\nFalse: ${falseCount}`);
+}
+
+countTruthy(array)
+
+// print string values added to array
+
+let obj = {
+    hi: "hi",
+    yes: "yes",
+    fine: 1,
+    ok: 2,
+    hello: "hello"
+};
+
+function objectProperties(obj) {
+    // arr to store values
+    let arr = [];
+    // length of object properties
+    let keys = Object.keys(obj);
+
+    for (i = 0; i < keys.length; i++) {
+        //   access key value
+        let key = keys[i];
+        // typeof string
+        if (typeof obj[key] === "string") {
+            // push object value attached to key
+        arr.push(obj[key]);
+    }
+}
+    console.log(arr);
+}
+
+objectProperties(obj);
+
+
+// log to console
+
+let obj = {
+    hi: "hi",
+    yes: "yes",
+    fine: 1,
+    ok: 2,
+    hello: "hello"
+}
+
+// first attempt
+
+function objectProperties (obj) {
+    for (let value in obj) {
+        if (typeof obj[value] === "string") console.log(`${value}: ${obj[value]}`)
+    }
+
+}
+
+objectProperties(obj)
+
+// better naming convention
+
+
+let obj = {
+    hi: "hi",
+    yes: "yes",
+    fine: 1,
+    ok: 2,
+    hello: "hello"
+}
+
+function objectProperties (obj) {
+    for (let key in obj) {
+        if (typeof obj[key] === "string") console.log(`${key}: ${obj[key]}`)
+    }
+
+}
+
+objectProperties(obj)
