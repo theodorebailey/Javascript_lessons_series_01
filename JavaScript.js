@@ -658,3 +658,164 @@ function sum (limit) {
 }
 
 sum(10)
+
+
+// Calculate grade
+
+let marks = [50, 50, 50, 60]
+let marks1 = [90]
+let marks2 = [80]
+let marks3 = [70]
+let marks4 = [60]
+
+
+function avgGrade (marks) {
+    
+    let count = 0;
+    let grade = "";
+    
+    for (let value in marks) {
+        
+        count += marks[value];
+        
+    }
+    
+    if (count >= 90) grade = "A";
+    else if (count >= 80) grade = "B"
+    else if (count >= 70) grade = "C"
+    else if (count >= 60) grade = "D"
+    else if (count >= 50) grade = "E"
+    else grade = "F"
+    
+    console.log(`Grade:${grade} (${Math.floor(count / marks.length)})`)
+    
+}
+
+avgGrade(marks);
+avgGrade(marks1);
+avgGrade(marks2);
+avgGrade(marks3);
+avgGrade(marks4);
+
+// changed order to make cleaner
+
+ 
+let marks = [50, 50, 50, 60]
+let marks1 = [90, 89, 91, 91]
+let marks2 = [80, 89, 89, 89]
+let marks3 = [70, 62, 75, 76, 70]
+let marks4 = [60]
+
+
+function avgGrade (marks) {
+    
+    let count = 0;
+    let grade;
+    
+    for (let mark of marks) {
+        
+        count += mark;
+        
+    }
+    
+    count = Math.floor(count / marks.length)
+    
+    if (count < 49)  grade = "F"
+    else if (count < 50) grade = "E"
+    else if (count < 60) grade = "D"
+    else if (count < 70) grade = "C"
+    else if (count < 80) grade = "B"
+    else if (count < 90) grade = "A";
+    else grade = "A*";
+    
+    
+    
+    console.log(`Grade:${grade} (${count}%)`)
+    
+}
+
+avgGrade(marks);
+avgGrade(marks1);
+avgGrade(marks2);
+avgGrade(marks3);
+avgGrade(marks4);
+
+// with return statements
+
+ 
+let marks = [50, 50, 50, 60]
+let marks1 = [90, 89, 91, 91]
+let marks2 = [80, 89, 89, 89]
+let marks3 = [70, 62, 75, 76, 70]
+let marks4 = [60]
+
+
+function avgGrade (marks) {
+    
+    let count = 0;
+    
+    for (let mark of marks) {
+        
+        count += mark;
+        
+    }
+    
+    count = Math.floor(count / marks.length)
+    
+    if (count < 49)  return "F"
+    if (count < 50) return "E"
+    if (count < 60) return "D"
+    if (count < 70) return "C"
+    if (count < 80) return "B"
+    if (count < 90) return "A"
+    if (count < 100) return "A*"
+    
+}
+
+console.log(avgGrade(marks));
+console.log(avgGrade(marks1));
+console.log(avgGrade(marks2));
+console.log(avgGrade(marks3));
+console.log(avgGrade(marks4));
+
+
+// seperating concerns in average grade and marks
+
+ 
+let marks = [50, 50, 50, 60]
+let marks1 = [90, 89, 91, 91]
+let marks2 = [80, 89, 89, 89]
+let marks3 = [70, 62, 75, 76, 70]
+let marks4 = [60]
+
+
+function avgGrade (avg) {
+    
+    if (avg < 49)  return "F"
+    if (avg < 50) return "E"
+    if (avg < 60) return "D"
+    if (avg < 70) return "C"
+    if (avg < 80) return "B"
+    if (avg < 90) return "A"
+    if (avg < 100) return "A*"
+    
+}
+
+function average (marks) {
+    
+    let count = 0;
+    
+    for (let mark of marks) {
+        
+        count += mark;
+        
+    }
+    
+    return count / marks.length;
+}
+
+console.log(avgGrade(average(marks)));
+console.log(avgGrade(average(marks1)));
+console.log(avgGrade(average(marks2)));
+console.log(avgGrade(average(marks3)));
+console.log(avgGrade(average(marks4)));
