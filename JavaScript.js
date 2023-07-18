@@ -742,7 +742,6 @@ avgGrade(marks4);
 
 // with return statements
 
- 
 let marks = [50, 50, 50, 60]
 let marks1 = [90, 89, 91, 91]
 let marks2 = [80, 89, 89, 89]
@@ -781,7 +780,6 @@ console.log(avgGrade(marks4));
 
 // seperating concerns in average grade and marks
 
- 
 let marks = [50, 50, 50, 60]
 let marks1 = [90, 89, 91, 91]
 let marks2 = [80, 89, 89, 89]
@@ -819,3 +817,117 @@ console.log(avgGrade(average(marks1)));
 console.log(avgGrade(average(marks2)));
 console.log(avgGrade(average(marks3)));
 console.log(avgGrade(average(marks4)));
+
+// seperate concerns
+
+let marks = [50, 50, 50, 60]
+let marks1 = [90, 89, 91, 91]
+let marks2 = [80, 89, 89, 89]
+let marks3 = [70, 62, 75, 76, 70]
+let marks4 = [60]
+
+function calculateGrade (average) {
+    
+    if (average < 60) return grade = "D"
+    if (average < 70) return grade = "C"
+    if (average < 80) return grade = "B"
+    if (average < 90) return grade = "A"
+    if (average < 100) return grade = "A*"
+    
+}
+
+function calculateAverage (marks) {
+    
+    let count = 0;
+    
+    for (let mark of marks) {
+        count += mark;
+    }
+    
+    return count / marks.length
+
+}
+
+console.log(calculateGrade(calculateAverage(marks)))
+console.log(calculateGrade(calculateAverage(marks1)))
+console.log(calculateGrade(calculateAverage(marks2)))
+console.log(calculateGrade(calculateAverage(marks3)))
+console.log(calculateGrade(calculateAverage(marks4)))
+
+// Running it in browser
+
+let marks = [50, 50, 50, 60]
+let marks1 = [90, 89, 91, 91]
+let marks2 = [80, 89, 89, 89]
+let marks3 = [70, 62, 75, 76, 70]
+let marks4 = [60]
+
+display(calculateGrade(calculateAverage(marks)))
+display(calculateGrade(calculateAverage(marks1)))
+display(calculateGrade(calculateAverage(marks2)))
+display(calculateGrade(calculateAverage(marks3)))
+display(calculateGrade(calculateAverage(marks4)))
+
+function calculateGrade (average) {
+    
+    if (average < 60) return grade = "D"
+    if (average < 70) return grade = "C"
+    if (average < 80) return grade = "B"
+    if (average < 90) return grade = "A"
+    if (average < 100) return grade = "A*"
+    
+}
+
+function calculateAverage (marks) {
+    
+    let count = 0;
+    
+    for (let mark of marks) {
+        count += mark;
+    }
+    
+    return count / marks.length
+
+}
+
+function display (input) {
+    console.log(input)
+}
+
+
+// stars and rows
+
+function showStars (num) {
+    
+    let stars = "";
+    let rows = ""
+    
+    for (i=0;i<num;i++) {
+        stars+= "*" 
+        rows+= `\n${stars}`
+    }
+    
+    return rows
+    
+}
+
+console.log(showStars(10))
+
+// Another way, console.log will print row length equated to stars
+
+function showStars (num) {
+    
+    for (let row = 0; row < num; row++) {
+        
+        let pattern = "";
+        
+        for (let i=0;i<row;i++) {
+            pattern += "*"
+        }
+        console.log(pattern)
+    }
+}
+
+showStars(10)
+
+// 
