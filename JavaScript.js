@@ -930,4 +930,125 @@ function showStars (num) {
 
 showStars(10)
 
-// 
+// Show primes, create index, loop through each prime with j to find match
+
+function showPrime(limit) {
+  let arr = [];
+  let primes = [2,3,7,11,13,17,19];
+  
+//   i index
+  for (i=0;i<=limit;i++) {
+    //   j is limit counter
+    for (j=2;j<=limit;j++) {
+        // if index equals limit counter
+      if (primes[i] == j) arr.push(j)
+    }
+  }
+  console.log(arr);
+}
+
+showPrime(20);
+
+
+// Show primes using includes
+
+function showPrime (limit) {
+    
+    let arr = [];
+    let primes = [2,3,7,11,13,17,19];
+    
+    for (i=0; i<= limit; i++) {
+        if (primes.includes(i)) arr.push(i)
+    }
+    
+    console.log(arr)
+}
+
+showPrime(20)
+
+// I understand but wouldn't gravitate to currently
+
+function showPrime(limit) {
+    let arr = [];
+
+// Function to check if a number is prime
+function isPrime(number) {
+    //   if even number, return false
+    if (number < 2) return false;
+    // count from 2 to sq root of number
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        // if number modulo range of i to square root of number, not prime
+    if (number % i === 0) return false;
+    }
+//   else return true
+    return true;
+}
+
+for (let i = 2; i <= limit; i++) {
+    //   if isPrime, argument i, returns true
+    if (isPrime(i)) {
+        // push i to array
+    arr.push(i);
+    }
+}
+// log array to console  
+console.log(arr);
+}
+
+//   pass argument to create range
+showPrime(1000);
+
+
+//   ugly function
+
+function showPrimes(limit) {
+    for (let number = 2; number <= limit; number++) {
+        // create boolean value
+        let isPrime = true;
+        // iterate through factors
+        for (let factor = 2; factor < number; factor++) {
+            // if number divisible by factor
+            if (number % factor === 0) {
+                // not prime
+                isPrime = false;
+                // break from loop
+                break;
+            }
+        }
+        // else if no factors, prime is true
+        if (isPrime) {
+            // log number
+            console.log(number);
+        }
+    }
+}
+
+// run up to limit of 20
+showPrimes(20);
+
+
+
+//   seperating concerns --> professional
+
+function isPrime (number) {
+    // < removes being divisible by self
+            for (let factor = 2; factor < number; factor++) {
+                if (number % factor === 0) {
+                    // any factor found
+                    return false;
+                }
+            }
+    return true;
+}
+
+function showPrimes(limit) {
+    
+    // start from 2, removes divisible by 1
+    for (let number=2;number<=limit;number++) {
+        
+        if (isPrime(number)) console.log(number)
+        
+    }
+}
+
+showPrimes(20);
