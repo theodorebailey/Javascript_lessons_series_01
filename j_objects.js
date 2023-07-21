@@ -63,8 +63,73 @@ function Circle (radius) {
 const constructCircle = new Circle(1);
 
 // creating empty object
-const x = {};
+const m = {};
 
 // DIFFERENCES
 // FACTORY - create function + call function + return new object, camel naming
 // CONSTRUCTOR - new operator + this keyword, pascal naming, familiar to C# + Java
+
+
+// Objects are dynamic
+
+const square = {
+    angle: 90,
+    
+}
+
+square.color = "blue";
+
+square.draw = function () {
+    console.log("...")
+}
+
+console.log(square);
+
+delete square.color;
+delete square.draw;
+
+console.log(square);
+
+// Factory function
+function squareConstructor (radius) {
+    return {
+        angle,
+        draw: function () {
+            console.log("draw")
+        }
+    };
+}
+
+const square1 = (90);
+
+// constructor function
+function Rectangle(angle) {
+    this.angle = radius;
+    this.draw = function () {
+        console.log("draw");
+    }
+}
+
+// rectangle1.constructor in terminal;
+const rectangle1 = new Rectangle(90);
+
+console.log(rectangle1);
+
+// a = a new object
+let a = {};
+// to create a string
+new String();
+// string literals, creating a string object, with properties
+let string = "";
+// boolean 
+new Boolean();
+// properties of object
+let boolean = true;
+let bool = false;
+
+
+// IMPORTANT
+// every object has a constructor property
+// the constructor property references the function used to create the object
+// IMPORTANT
+
