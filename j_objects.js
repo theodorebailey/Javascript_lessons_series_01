@@ -133,3 +133,38 @@ let bool = false;
 // the constructor property references the function used to create the object
 // IMPORTANT
 
+
+// functions are objects
+function Pentagon (angle) {
+    this.angle = angle;
+    this.draw = function () {
+        console.log("draw");
+    }
+}
+
+const pent1 = new Pentagon(108);
+
+// functions are objects 
+
+function Octogon(angle) {
+    this.angle = angle;
+    this.draw = function () {
+        console.log("draw");
+    }
+}
+
+const Octogon1 = new Function('angle', `
+    this.angle = angle;
+    this.draw = function () {
+        console.log("draw");
+    }
+`);
+
+const octogon = new Octogon1(135);
+
+console.log(octogon);
+
+// call empty object into function
+Octogon.call({}, 1);
+
+const anotherOctogon = new Octogon(135);
