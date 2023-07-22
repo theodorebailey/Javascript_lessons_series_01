@@ -168,3 +168,4 @@ console.log(octogon);
 Octogon.call({}, 1);
 
 const anotherOctogon = new Octogon(135);
+
