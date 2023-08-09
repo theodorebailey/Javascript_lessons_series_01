@@ -379,3 +379,257 @@ const ans = (str, char) => check(str, char) < 5 && check(str, char) > 1 ? "yes" 
 
 console.log(ans("hello you major dude yes oo", "o"))
 console.log(ans("hello you", "o"));
+
+// filter function will remove anything that isn't related to the call back function
+// returning true and false
+const check = (str, char) => str.split("").filter(c => c === char).length;
+
+const ans = (str, char) => check(str, char) < 5 && check(str, char) > 1;
+
+console.log(ans("hello you major dude yes oo", "o"))
+console.log(ans("hello you", "o"));
+
+
+// write a program
+// finds the number of even digits in an array
+
+// first attempt
+// return undefined because the functions doesn't explicitly return a value
+const evenDigits = (arr) => arr.forEach(value=> {
+    console.log(value)
+})
+
+
+console.log(evenDigits([1,2,3,4,5,6,7,8,9]));
+
+// using filter 
+
+const evenDigits = (arr) => arr.filter(value=> value % 2 == 0 );
+
+
+console.log(evenDigits([1,2,3,4,5,6,7,8,9]));
+
+// re written
+// declare function, parameter array, array.filter each iteration by accessing if % 2 == 0
+const evenDigits = (arr) => arr.filter(value => value % 2 == 0)
+console.log(evenDigits([1,2,3,4,5,6,7,8,9]));
+
+
+// using forEach
+const evenDigits = (arr) => {
+    const rArr = [];
+    arr.forEach(value => value % 2 == 0 ? rArr.push(value) : null)
+    return rArr;
+} 
+
+
+console.log(evenDigits([1,2,3,4,5,6,7,8,9]));
+
+// counts the even numbers with length
+const evenDigits = (arr) => arr.filter(value => value % 2 == 0).length;
+console.log(evenDigits([1,2,3,4,5,6,7,8,9]));
+
+
+// a program
+// number of even numbers up to a set number
+
+// a program
+// number of even numbers up to a set number
+
+// a program
+// number of even numbers up to a set number
+
+// a program
+// number of even numbers up to a set number
+
+// finally got one working
+const evenDigitsLimit = (arr, max) => arr.filter(value => value % 2 == 0 && value <= max ? value : null)
+
+console.log(evenDigitsLimit([1,2,3,4,5,6,7,8,9], 7));
+
+
+
+// without ternanry operator filter returns values 
+const evenDigitsLimit = (arr, max) => arr.filter(value => value % 2 == 0 && value <= max)
+
+console.log(evenDigitsLimit([1,2,3,4,5,6,7,8,9], 7));
+
+// add length to get numebr of even numbers up to limit
+
+const evenDigitsLimit = (arr, max) => arr.filter(value => value % 2 == 0 && value <= max).length
+
+console.log(evenDigitsLimit([1,2,3,4,5,6,7,8,9], 7));
+
+// his example
+// create two seperate functions 
+// one function returns length of even values
+// second function creates an array incrementally from 1 to a set limit provided by argument
+const evenDigitsLimit = (arr, max) => arr.filter(value => value % 2 == 0 && value <= max).length
+
+console.log(evenDigitsLimit([1,2,3,4,5,6,7,8,9], 7));
+
+const arrayCreator = (num) => {
+  let arr = [];
+  for (i = 1; i <= num; i += 1) {
+    arr.push(i);
+  }
+  return arr;
+}
+
+console.log(evenDigitsLimit(arrayCreator(100), 56));
+
+// if i want every value that fits under one condition then FILTER IS PERFECT
+
+// check whether a given array of integers
+// is sorted in ascending order
+
+// check whether a given array of integers
+// is sorted in ascending order
+
+// check whether a given array of integers
+// is sorted in ascending order
+
+// check whether a given array of integers
+// is sorted in ascending order
+
+// check whether a given array of integers
+// is sorted in ascending order
+
+const isAscending = (arr) => {
+    for (i=0;i<=arr.length;i++) {
+      if (arr[i] > arr[i + 1]) {
+        return false
+      }
+    }
+    return true;
+  }
+  
+  console.log(isAscending([1,2,3,4,5,6,7,8,9,10]));
+  console.log(isAscending([1,2,3,4,5,6,7,5,4]));
+
+
+
+// write a program
+// largest even number 
+// from array
+
+// write a program
+// largest even number 
+// from array
+
+// write a program
+// largest even number 
+// from array
+
+// write a program
+// largest even number 
+// from array
+
+// try out Math.max()
+const largestNumber = (a,b) => Math.max(a, b);
+
+console.log(largestNumber(10,15));
+console.log(largestNumber(15,10));
+
+// very verbose
+// need a way of converting an array into a easily countable list
+// need a storage
+
+const largestNumber = (arr) => {
+  
+    let evenArr = [];
+    let largest = 0;
+    
+    for (let i =0; i<=arr.length;i++) {
+      if (arr[i] % 2 == 0) evenArr.push(arr[i]) 
+    if (arr[i] > largest) largest = arr[i]
+    
+}
+
+return largest
+}
+
+console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
+console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
+
+
+// you can split an array
+// ... is the spread operator
+// the spread operator can be used to pass each value as an argument to the function
+
+const largestNumber = (arr) => Math.max(...arr);
+
+console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
+console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
+
+
+// look how simple this is 
+// create a function
+// take array as argument
+// Math.max available numbers
+// spread operator the array
+// run the filter function to pass only even numbers
+const largestNumber = (arr) => Math.max(...arr.filter(num => num % 2 ==0))
+
+console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
+console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
+
+// for largest number
+const largestNumber = (arr) => Math.max(...arr)
+
+console.log(largestNumber([1,2,3,4,5,6,7,8,9,10,11]));
+console.log(largestNumber([1,2,3,4,5,6,7,8,9,10,11]));
+
+
+// for largest even number 
+const largestNumber = (arr) => Math.max(...arr.filter(num => num % 2 === 0))
+
+console.log(largestNumber([1,2,3,4,5,6,7,8,9,10,11]));
+console.log(largestNumber([1,2,3,4,5,6,7,8,9,10,11]));
+
+
+// write a program
+// replaced the first string digit
+// should contain at least one digit
+// with $
+
+// write a program
+// replaced the first string digit
+// should contain at least one digit
+// with $
+
+// write a program
+// replaced the first string digit
+// should contain at least one digit
+// with $
+
+// write a program
+// replaced the first string digit
+// should contain at least one digit
+// with $
+
+// first
+const addDollar = (str) => str.replace(str[0], "$");
+
+console.log(addDollar("Helo"))
+
+// at least 1 character in length
+
+const addDollar = (str) => str.length > 0 ? str.replace(str[0], "$") : null;
+
+console.log(addDollar("Helo"))
+console.log(addDollar(""))
+
+
+// he wanted to replace the first digit
+
+const addDollar = (str) => str.replace(/[0-9]/, "$"); 
+console.log(addDollar("Helo1pogba"))
+console.log(addDollar("hsfaousdg5;safafa"));
+
+// make it global
+// global means all occurences 
+// simply put a g after the expression in replace
+const addDollar = (str) => str.replace(/[0-9]/g, "$"); 
+console.log(addDollar("Helo1po4633gba"))
+console.log(addDollar("hsfaousdg5;saf46346afa"));
