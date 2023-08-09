@@ -79,7 +79,7 @@ function ext(file) {
 
 console.log(ext("file.name"));
 
-const fileExt = (file) => {
+const fileEx = (file) => {
     
     let lastDotIndex = file.lastIndexOf(".");
     console.log(file.substring(lastDotIndex + 1))
