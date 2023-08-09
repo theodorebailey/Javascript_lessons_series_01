@@ -633,3 +633,80 @@ console.log(addDollar("hsfaousdg5;safafa"));
 const addDollar = (str) => str.replace(/[0-9]/g, "$"); 
 console.log(addDollar("Helo1po4633gba"))
 console.log(addDollar("hsfaousdg5;saf46346afa"));
+
+
+// backslash and d with replace a digit in replace
+const addDollar = (str) => str.replace(/\d/g, "$"); 
+console.log(addDollar("Helo1po4633gba"))
+console.log(addDollar("hsfaousdg5;saf46346afa"));
+
+// back to first instance
+const addDollar = (str) => str.replace(/\d/, "$"); 
+console.log(addDollar("Helo1po4633gba"))
+console.log(addDollar("hsfaousdg5;saf46346afa"));
+
+
+// given a year
+// check if it is a leap year 
+// return T /F
+
+// given a year
+// check if it is a leap year 
+// return T /F
+
+// given a year
+// check if it is a leap year 
+// return T /F
+
+// given a year
+// check if it is a leap year 
+// return T /F
+
+// first attempt
+// he gave me the answer
+// but still a strength
+// You're provided with the number 4, every 4 years
+// you're provided with a year, that a leap year falls on
+// you're provided with modulas which allows us to divide a number by a number and be given the remainder
+const isLeapYear = (yr) => (yr % 4 === 0) ? true : false;
+
+console.log(isLeapYear(2020));
+console.log(isLeapYear(2021));
+
+
+// you don't need a ternary operator for an arrow function in this case
+const isLeapYear = (yr) => (yr % 4 === 0);
+
+console.log(isLeapYear(2020));
+console.log(isLeapYear(2021));
+
+
+// write a program
+// compare two objects
+// determine if the first one contains the same properties, as the second
+// the second might also have additional properties
+
+
+// You have two objects
+// you can't directly compare the values without them being read / compiled
+// to do this you need a way of seperating the object into a string value
+// as a string value you can provide a direct comparison
+const compareObjects = (a,b) => {
+  if (JSON.stringify(a) == JSON.stringify(b)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
+let objA = {a:1, b:2,c:3};
+let objB = {a:1, b:2,c:3};
+let objC = {a:1, b:2,d:3};
+
+
+console.log(compareObjects(objA, objB));
+console.log(compareObjects(objA, objC));
+
+
+
