@@ -137,7 +137,7 @@ next("hello");
 // We want to modify the contents of the string
 // this means we will use .split("") --> split into an array
 
-const next = (str) => {
+const nex = (str) => {
     for (i = 0; i < str.length; i++) {
         let charCode = str.charCodeAt(i);
         let nxtChar = String.fromCharCode(charCode + 1);
@@ -154,7 +154,7 @@ const modify = (str) => str.split("").map(char => String.fromCharCode(char.charC
 
 console.log(modify("hello"))
 
-const moveCharForwards = (str) => str.split("").map(char => String.fromCharCode(char.charCodeAt(0) + 1))
+const moveCharForward = (str) => str.split("").map(char => String.fromCharCode(char.charCodeAt(0) + 1))
 console.log(moveCharForwards("hello"))
 
 const moveCharForwards = (str) => str.split("").map(char => String.fromCharCode(char.charCodeAt(0) + 1)).join("")
@@ -185,7 +185,7 @@ const formatDate = (date = new Date().toString().split(" ")) => {
 
 
 // 
-const formatDate = (date = new Date()) => {
+const formatDat = (date = new Date()) => {
     const d = date.getDay(); // gets Tuesday not the date
     const m = date.getMonth();
     const y = date.getFullYear();
@@ -197,7 +197,7 @@ const formatDate = (date = new Date()) => {
 
 
 
-const formatDate = (date = new Date()) => {
+const formatDa = (date = new Date()) => {
     const d = date.getDate();
     const m = date.getMonth() + 1;
     const y = date.getFullYear();
@@ -215,7 +215,7 @@ const newStr = (str) => (str.substring(0,4) === "New!") ? console.log(str) : con
 
 newStr("New! hello")
 
-const newStr = (str) => (str.substring(0,4) === "New!") ? console.log(str.substring(4)) : console.log(`New! ${str}`);
+const newSt = (str) => (str.substring(0,4) === "New!") ? console.log(str.substring(4)) : console.log(`New! ${str}`);
 
 
 // his method - using indexOf to search for the relevant string
@@ -238,14 +238,14 @@ console.log(combineString("hello"))
 
 
 // slice
-const combineString = (str) => (str.length < 3) ? str : str.slice(0,3) + str.slice(-3);
+const combineStr = (str) => (str.length < 3) ? str : str.slice(0,3) + str.slice(-3);
 // (str.substring(0,3) + str.slice(-3,0));
 console.log(combineString("hello"))
 
 
 // substring
 
-const combineString = (str) => (str.length < 3) ? str : str.substring(0,3) + str.substring(str.length -3);
+const combineS = (str) => (str.length < 3) ? str : str.substring(0,3) + str.substring(str.length -3);
 
 console.log(combineString("hello"))
 
@@ -259,19 +259,19 @@ console.log(firstHalfEven("hello"))
 console.log(firstHalfEven("helloo"))
 
 // trying to use AI
-const firstHalfEven = (str) => str.length % 2 == 0? str.substring(0, Math.floor(str.length / 2) + (str.length % 2 === 0 ? 0 : 1)) : str;
+const firstHalfEve = (str) => str.length % 2 == 0? str.substring(0, Math.floor(str.length / 2) + (str.length % 2 === 0 ? 0 : 1)) : str;
 
 console.log(firstHalfEven("hello"))
 console.log(firstHalfEven("helloo"))
 
 // back on the same 
-const firstHalfEven = (str) => str.length % 2 == 0? str.substring(0, str.length / 2) : str
+const firstHalfEv = (str) => str.length % 2 == 0? str.substring(0, str.length / 2) : str
 
 console.log(firstHalfEven("hello"))
 console.log(firstHalfEven("helloo"))
 
 // his answer
-const firstHalfEven = (str) => str.substring(0, str.length / 2);
+const firstHalfE = (str) => str.substring(0, str.length / 2);
 
 console.log(firstHalfEven("hello"))
 console.log(firstHalfEven("helloo"))
@@ -285,13 +285,13 @@ const concatenateStrings = (str1, str2) => str1.substring(1,str1.length-1) + str
 console.log(concatenateStrings("hello", "jesus"))
 
 // realised ends cutting off - removed -1
-const concatenateStrings = (str1, str2) => str1.substring(1,str1.length) + str2.substring(1,str2.length);
+const concatenateString = (str1, str2) => str1.substring(1,str1.length) + str2.substring(1,str2.length);
 
 console.log(concatenateStrings("hello", "jesus"))
 // that happens because substring ignores the last number being 5 with only 4 indexes
 
 // slice with removed extras
-const concatenateStrings = (str1, str2) => str1.slice(1) + str2.slice(1);
+const concatenateStr = (str1, str2) => str1.slice(1) + str2.slice(1);
 
 // given two values
 // which one is nearest 100
@@ -302,7 +302,7 @@ console.log(near100(150, 200));
 console.log(near100(150, 101));
 
 // Math.abs
-const near100 = (a, b) => (Math.abs(a - 100) < Math.abs(b - 100)) ? a : b;
+const nearest100 = (a, b) => (Math.abs(a - 100) < Math.abs(b - 100)) ? a : b;
 
 console.log(near100(150, 200));
 console.log(near100(150, 101));
@@ -314,11 +314,11 @@ console.log(near100(45, 55));
 
 
 // const near100 = (a, b) => (Math.abs(a - 100) < Math.abs(b - 100)) ? a : b;
-const near100 = (a,b) => Math.abs(100 - a) < Math.abs(100 - b) ? a : b;
+const nears100 = (a,b) => Math.abs(100 - a) < Math.abs(100 - b) ? a : b;
 
 // Absolute removes the negative values which allows us to compare 2 positive values to see which one is smaller and therefore nearer to 100
 // the SAME but different
-const near100 = (a,b) => Math.abs(a - 100) < Math.abs(b - 100) ? a : b
+const neares100 = (a,b) => Math.abs(a - 100) < Math.abs(b - 100) ? a : b
 
 // checks a given string
 // tries to find 2 to 4 occurences of a specifiec character
@@ -365,7 +365,7 @@ const check = (str, char) => str.split("").filter(c => c === char).length;
 // filter function will remove anything that isn't related to the call back function
 const check = (str, char) => str.split("").filter(c => c === char).length;
 
-const ans = (check) => check < 5 && check > 1 ? "yes" : "no"
+const answer = (check) => check < 5 && check > 1 ? "yes" : "no"
 
 console.log(ans(check("hello you major dude yes oo", "o")))
 console.log(ans(check("hello you", "o")));
@@ -375,7 +375,7 @@ console.log(ans(check("hello you", "o")));
 // filter function will remove anything that isn't related to the call back function
 const check = (str, char) => str.split("").filter(c => c === char).length;
 
-const ans = (str, char) => check(str, char) < 5 && check(str, char) > 1 ? "yes" : "no"
+const answe = (str, char) => check(str, char) < 5 && check(str, char) > 1 ? "yes" : "no"
 
 console.log(ans("hello you major dude yes oo", "o"))
 console.log(ans("hello you", "o"));
@@ -384,7 +384,7 @@ console.log(ans("hello you", "o"));
 // returning true and false
 const check = (str, char) => str.split("").filter(c => c === char).length;
 
-const ans = (str, char) => check(str, char) < 5 && check(str, char) > 1;
+const answ = (str, char) => check(str, char) < 5 && check(str, char) > 1;
 
 console.log(ans("hello you major dude yes oo", "o"))
 console.log(ans("hello you", "o"));
@@ -395,7 +395,7 @@ console.log(ans("hello you", "o"));
 
 // first attempt
 // return undefined because the functions doesn't explicitly return a value
-const evenDigits = (arr) => arr.forEach(value=> {
+const evenDigit = (arr) => arr.forEach(value=> {
     console.log(value)
 })
 
@@ -404,19 +404,19 @@ console.log(evenDigits([1,2,3,4,5,6,7,8,9]));
 
 // using filter 
 
-const evenDigits = (arr) => arr.filter(value=> value % 2 == 0 );
+const evenD = (arr) => arr.filter(value=> value % 2 == 0 );
 
 
 console.log(evenDigits([1,2,3,4,5,6,7,8,9]));
 
 // re written
 // declare function, parameter array, array.filter each iteration by accessing if % 2 == 0
-const evenDigits = (arr) => arr.filter(value => value % 2 == 0)
+const evenDi = (arr) => arr.filter(value => value % 2 == 0)
 console.log(evenDigits([1,2,3,4,5,6,7,8,9]));
 
 
 // using forEach
-const evenDigits = (arr) => {
+const evenDig = (arr) => {
     const rArr = [];
     arr.forEach(value => value % 2 == 0 ? rArr.push(value) : null)
     return rArr;
@@ -450,13 +450,13 @@ console.log(evenDigitsLimit([1,2,3,4,5,6,7,8,9], 7));
 
 
 // without ternanry operator filter returns values 
-const evenDigitsLimit = (arr, max) => arr.filter(value => value % 2 == 0 && value <= max)
+const evenDigitsLim = (arr, max) => arr.filter(value => value % 2 == 0 && value <= max)
 
 console.log(evenDigitsLimit([1,2,3,4,5,6,7,8,9], 7));
 
 // add length to get numebr of even numbers up to limit
 
-const evenDigitsLimit = (arr, max) => arr.filter(value => value % 2 == 0 && value <= max).length
+const evenDigitsL = (arr, max) => arr.filter(value => value % 2 == 0 && value <= max).length
 
 console.log(evenDigitsLimit([1,2,3,4,5,6,7,8,9], 7));
 
@@ -464,7 +464,7 @@ console.log(evenDigitsLimit([1,2,3,4,5,6,7,8,9], 7));
 // create two seperate functions 
 // one function returns length of even values
 // second function creates an array incrementally from 1 to a set limit provided by argument
-const evenDigitsLimit = (arr, max) => arr.filter(value => value % 2 == 0 && value <= max).length
+const evenDigitsLimited = (arr, max) => arr.filter(value => value % 2 == 0 && value <= max).length
 
 console.log(evenDigitsLimit([1,2,3,4,5,6,7,8,9], 7));
 
@@ -535,7 +535,7 @@ console.log(largestNumber(15,10));
 // need a way of converting an array into a easily countable list
 // need a storage
 
-const largestNumber = (arr) => {
+const largestNum = (arr) => {
   
     let evenArr = [];
     let largest = 0;
@@ -557,7 +557,7 @@ console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
 // ... is the spread operator
 // the spread operator can be used to pass each value as an argument to the function
 
-const largestNumber = (arr) => Math.max(...arr);
+const largestNumb = (arr) => Math.max(...arr);
 
 console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
 console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
@@ -569,20 +569,20 @@ console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
 // Math.max available numbers
 // spread operator the array
 // run the filter function to pass only even numbers
-const largestNumber = (arr) => Math.max(...arr.filter(num => num % 2 ==0))
+const largestNu = (arr) => Math.max(...arr.filter(num => num % 2 ==0))
 
 console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
 console.log(largestNumber([1,2,3,4,5,6,7,8,9,10]));
 
 // for largest number
-const largestNumber = (arr) => Math.max(...arr)
+const largestNumbe = (arr) => Math.max(...arr)
 
 console.log(largestNumber([1,2,3,4,5,6,7,8,9,10,11]));
 console.log(largestNumber([1,2,3,4,5,6,7,8,9,10,11]));
 
 
 // for largest even number 
-const largestNumber = (arr) => Math.max(...arr.filter(num => num % 2 === 0))
+const largestN = (arr) => Math.max(...arr.filter(num => num % 2 === 0))
 
 console.log(largestNumber([1,2,3,4,5,6,7,8,9,10,11]));
 console.log(largestNumber([1,2,3,4,5,6,7,8,9,10,11]));
@@ -615,7 +615,7 @@ console.log(addDollar("Helo"))
 
 // at least 1 character in length
 
-const addDollar = (str) => str.length > 0 ? str.replace(str[0], "$") : null;
+const addDolla = (str) => str.length > 0 ? str.replace(str[0], "$") : null;
 
 console.log(addDollar("Helo"))
 console.log(addDollar(""))
@@ -623,27 +623,27 @@ console.log(addDollar(""))
 
 // he wanted to replace the first digit
 
-const addDollar = (str) => str.replace(/[0-9]/, "$"); 
+const addDoll = (str) => str.replace(/[0-9]/, "$"); 
 console.log(addDollar("Helo1pogba"))
 console.log(addDollar("hsfaousdg5;safafa"));
 
 // make it global
 // global means all occurences 
 // simply put a g after the expression in replace
-const addDollar = (str) => str.replace(/[0-9]/g, "$"); 
+const addDol = (str) => str.replace(/[0-9]/g, "$"); 
 console.log(addDollar("Helo1po4633gba"))
 console.log(addDollar("hsfaousdg5;saf46346afa"));
 
 
 // backslash and d with replace a digit in replace
-const addDollar = (str) => str.replace(/\d/g, "$"); 
+const addDo = (str) => str.replace(/\d/g, "$"); 
 console.log(addDollar("Helo1po4633gba"))
 console.log(addDollar("hsfaousdg5;saf46346afa"));
 
 // back to first instance
-const addDollar = (str) => str.replace(/\d/, "$"); 
-console.log(addDollar("Helo1po4633gba"))
-console.log(addDollar("hsfaousdg5;saf46346afa"));
+const addDollarSign = (str) => str.replace(/\d/, "$"); 
+console.log(addDollarSign("Helo1po4633gba"))
+console.log(addDollarSign("hsfaousdg5;saf46346afa"));
 
 
 // given a year
@@ -675,7 +675,7 @@ console.log(isLeapYear(2021));
 
 
 // you don't need a ternary operator for an arrow function in this case
-const isLeapYear = (yr) => (yr % 4 === 0);
+const isLeapYr = (yr) => (yr % 4 === 0);
 
 console.log(isLeapYear(2020));
 console.log(isLeapYear(2021));
