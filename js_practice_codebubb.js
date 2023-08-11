@@ -709,4 +709,232 @@ console.log(compareObjects(objA, objB));
 console.log(compareObjects(objA, objC));
 
 
+// this works using the every keyword
+const compareTwoObjects = (a,b) => Object.keys(a).every(key => b[key])
 
+console.log(compareTwoObjects(objA, objB));
+console.log(compareTwoObjects(objA, objC));
+
+// filter function will remove anything that isn't related to the call back function
+const comparingObjects = (obj1, obj2) => JSON.stringify(obj1) === JSON.stringify(obj2);
+
+console.log(comparingObjects(objA, objB));
+console.log(comparingObjects(objA, objC));
+
+
+// Object.keys with argument of an object returns an array of key values held in object
+const comparingObject = (a,b) => {
+  console.log(Object.keys(a));
+  console.log(Object.keys(b));
+}
+
+// converted to arrays I can compare length values
+const comparingObj = (a,b) => Object.keys(a).length === Object.keys(b).length;
+
+// using every keyword, we can capture the key value and compare with b
+// every determine weather all elements of an array satisfy a condition
+// Object provides access to functionality included for all objects
+// keys creates an array of key values
+// every iterates through an array and terminates if a false value is found
+const comparingObjec = (a,b) => Object.keys(a).every(key=> b[key]);
+
+// Object keys method creates an array
+// we conver the array to a string
+// we compare both values converted to strings
+const comparingTwoObjects = (a,b) => Object.keys(a).toString() === Object.keys(b).toString();
+
+// two objects
+// object keys provides an array
+// the every array method returns true if all are true or false if one is
+// every runs through the array evaluating each index of arrays a + b keys 
+const compareThemObjects = (a,b) => Object.keys(a).every(value => b[value]);
+
+// write a program or a function
+// convert comma seperated values
+// into an array
+// a new line indicating a new row in the array
+
+// function takes a string value 
+// str value 
+// replace global comma
+// with new line break
+// global comma is syntax so no need for string value
+// new line break in form string added to string
+const commaToLineBreak = (str) => str.replace(/,/g, "\n");
+
+
+let string = "abc,def,ghi,jkl";
+console.log(commaToLineBreak(string));
+
+
+// filter will remove anything that doesn't meet the condition
+
+
+// I had issues with my string
+// his was different
+// in layout and line breaks with commas
+// essentially we're passing a string seperated by commas and line breaks
+// line breaks at the end of the line
+// commas to seperate rows - 2 per line to sepertate 3
+const commaToLineBr = (str) => str.split('\n').map(line=> line.split(","));
+
+
+let str = `abc,def,ghi
+jkl,mno,pqr
+stu,vwx,yza`;
+
+console.log(commaToLineBreak(string));
+
+// later had an issue not using a backslash opposed to a forward slash for line break syntax ---- "\n"
+
+// filter function will remove anything that isn't related to the call back function
+const commaToLineBreakExtended = (str) => str.split("\n").map(value => value.split(",").map(v => v.split(",")));
+let stringCommaLineBreak = `abc,def,ghi
+jkl,mno,pqr
+stu,vwx,yza`;
+
+console.log(commaToLineBreak(stringCommaLineBreak));
+
+
+// write a program
+// generate a random hexadecimal colour code
+
+// write a program
+// generate a random hexadecimal colour code
+
+// write a program
+// generate a random hexadecimal colour code
+
+// write a program
+// generate a random hexadecimal colour code
+
+// write a program
+// generate a random hexadecimal colour code
+
+// first attempt
+// input - hexadecimal values, hexa storage
+// process - iterate 6 times to proivde random hexadecimal
+// output - hexa value #****** (6 random values)
+// 
+const randomHexa = (values) => {
+  let hexa = "#";
+  for (i=0;i<6;i++) {
+    console.log(i)
+     hexa += values[Math.floor(Math.random() * (hexadecimalValues.length - 0) + 0)];
+  }
+  
+  return hexa;
+}
+const hexadecimalValues = "0123456789ABCDEF";
+
+console.log(randomHexa(hexadecimalValues));
+
+const randomHexValue = () => Math.random()
+
+console.log(randomHexValue());
+
+
+// .toString(16) give us base 16 which is numbers 0 - 9 and A - F
+// .toString(15) gives us base 15 which gives us 0 - 9 and A - E
+// .toString(17) gives us base 17 which gives us 0 - 9 and A - G
+// get it?
+const randomHexValue16 = () => Math.floor(Math.random() * 16)
+
+console.log(randomHexValue());
+
+
+// create a random digit generator
+// create a random number 
+// use Math.floor
+// Math.random
+// * 16 for the 15 digit base due to rounding down
+// .toString(16) will provide access to numbers 0 - 9 and A - F = 15 digits
+// .toString(17) for 16 digits
+// .toString(15) for 14 digits
+const randomHexVal = () => Math.floor(Math.random() * 16).toString(16);
+
+// we then need to
+// create our hex value
+// hash key "#"
+// with an Array's built in function
+// the from function takes two arguments 
+// Array.from
+// creates an array of length 6
+// we then populate that array of length 6 
+// we populate it with 6 callback functions to the map function 
+// adding incrementally 6 values to our Array
+// we have our result returned
+const hexValue = (hexGen) => "#" + Array.from({length: 6}).map(hexGen).join("");
+
+console.log(randomHexVal());
+console.log(hexValue(randomHexValue))
+
+
+// write a program
+// return true
+// if provided predicate (boolean) function return
+// is true for all elements
+// otherwise false
+
+// write a program
+// return true
+// if provided predicate (boolean) function return
+// is true for all elements
+// otherwise false
+
+
+// write a program
+// return true
+// if provided predicate (boolean) function return
+// is true for all elements
+// otherwise false
+
+
+// write a program
+// return true
+// if provided predicate (boolean) function return
+// is true for all elements
+// otherwise false
+
+
+// with map I can produce an array of all boolean expressions
+const randomHexValu = (arr, limit) => arr.map(value => (value < limit) === true);
+
+console.log(randomHexValue([1,2,3,4,5], 6))
+
+// with every I can check every instance and return one value
+const randomHexValve = (arr, limit) => arr.every(value => (value < limit) === true);
+
+console.log(randomHexValue([1,2,3,4,5], 6))
+
+// using a traditional for loop
+
+const allTrue = (arr, limit) => {
+  
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] >= limit) return false
+  }
+  return true;
+}
+
+console.log(allTrue([1,2,3,4,5], 6))
+
+console.log(allTrue([1,2,3,4,5], 5))
+
+console.log(allTrue([1,2,3,4,5], 4))
+
+
+// write a program
+// function
+// returns a passed string
+// alphabetical order
+
+// declated a string to iterate through
+const st = "hello, everyone";
+
+// created a for loop
+// 
+for (let i = 0; i < str.length; i++) {
+  const ascii = str.charCodeAt(i);
+  console.log(`string: ${str[i]} + ascii code: ${ascii} ;`)
+}
