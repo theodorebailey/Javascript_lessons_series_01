@@ -938,3 +938,100 @@ for (let i = 0; i < str.length; i++) {
   const ascii = str.charCodeAt(i);
   console.log(`string: ${str[i]} + ascii code: ${ascii} ;`)
 }
+
+
+// This is a demo task.
+
+// Write a function:
+
+// function solution(A);
+
+// that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
+
+// For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
+
+// Given A = [1, 2, 3], the function should return 4.
+
+// Given A = [−1, −3], the function should return 1.
+
+// Write an efficient algorithm for the following assumptions:
+
+// N is an integer within the range [1..100,000];
+// each element of array A is an integer within the range [−1,000,000..1,000,000].
+
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+// I = Array
+
+// P
+// Find length
+// remove negative integers - will return 1
+// Sort array into numerical order
+// Count through the array and evaluate if the difference is greater than 1 or 0
+// 
+
+// O = return arr index + 1
+
+
+// PRACTICE FOR CODEABILITY FOR ADMIRAL
+function solution(A) {
+  // Implement your solution here
+  
+  // loop through, evaluate with filter function
+  const arr = A.filter(value => value > 0).sort();
+
+  if (arr.length < 1) return 1;
+
+  for (var i = 0; i < arr.length; i++) {
+
+      if (arr[i + 1] === undefined) return arr[arr.length - 1] + 1;
+      if (arr[i + 1] - arr[i] > 1) return arr[i] + 1;
+
+  }
+  
+}
+
+
+// Test cases
+// console.log(solution([1, 3, 6, 4, 1, 2])); // Outputs: 5
+// console.log(solution([1, 2, 3])); // Outputs: 4
+// console.log(solution([-1, -3])); // Outputs: 1
+
+// function takes parameter: array
+function sol(A) {
+  // get length of function
+  const n = A.length;
+  // fill an array with false values
+  // increment the array length by 1 to account for starting at position 1
+  // index 1 == 1
+  // index 2 == 2
+  const counters = new Array(n + 1).fill(false);
+
+  // counters is an array of false values
+  // we evaluate each index in the array
+  // if it is larger than 0 && smaller than n === A.length
+  // this means we only need to evaluate the length N because to increment by 1 each time means each position must be filled in the length array
+  // if value found, find index == value , set to true
+  // if position not found, stays false
+  for (let i = 0; i < n; i++) {
+    if (A[i] > 0 && A[i] <= n) {
+      counters[A[i]] = true;
+    }
+  }
+
+  // Find the first missing positive integer
+  for (let i = 1; i <= n; i++) {
+    if (!counters[i]) {
+      return i;
+    }
+  }
+
+  // n is the largest number && counters array length 
+  return n + 1;
+}
+
+// Test cases
+console.log(sol([1, 3, 6, 4, 1, 2])); // Outputs: 5
+console.log(sol([1, 2, 3])); // Outputs: 4
+console.log(sol([-1, -3])); // Outputs: 1
