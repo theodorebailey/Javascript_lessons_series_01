@@ -1035,3 +1035,26 @@ function sol(A) {
 console.log(sol([1, 3, 6, 4, 1, 2])); // Outputs: 5
 console.log(sol([1, 2, 3])); // Outputs: 4
 console.log(sol([-1, -3])); // Outputs: 1
+
+
+//  we want to seperate the string into an array using split
+// evaluate the array using sort to order in unicode order
+// then rejoin the array into a str value
+const alphabetical = (str) => str.split("").sort().join("");
+
+
+// how many vowels in a string
+// function
+// parameters takes string and letters to select by default
+// split into an array
+// filter using placeholder to iterate
+// e = each element in the array
+// letters indexOf array element > -1
+// filter will create a new array with all conditions that evaluate to true / > -1
+// use length property to access new filter arrays length
+//  we can also pass different letters into the function
+const vowelCount = (str, letters = ["a","e","i","o","u"]) => str.split("").filter(s => s =  letters.indexOf(s) > -1).length;
+console.log(vowelCount("helloeeveryoneutipi"));
+
+
+// coin calculator
